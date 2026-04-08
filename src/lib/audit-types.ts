@@ -111,7 +111,7 @@ export interface AuditResult {
 
 // ═══════════════════════════════════════════
 // STRICTLY COMPUTED TRUST SCORE
-// Formula: 100 - (Contradicted% × 1.5) - (Unverifiable% × 0.5)
+// Formula: 100 - (Contradicted% × 1.0) - (Unverifiable% × 0.3)
 // Clamped between 0 and 100.
 // ═══════════════════════════════════════════
 
@@ -170,7 +170,7 @@ function computeExactPercentages(
 
 /**
  * Compute trust score using the strict formula:
- * Trust Score = 100 - (Contradicted% × 1.5) - (Unverifiable% × 0.5)
+ * Trust Score = 100 - (Contradicted% × 1.0) - (Unverifiable% × 0.3)
  * Clamped between 0 and 100.
  */
 export function computeWeightedTrustScore(sentences: AuditSentence[]): number {
